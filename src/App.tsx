@@ -7,13 +7,8 @@ import { MovieCard, TrailerCard } from "./component/ui/card";
 import { useList } from "./hooks/useList";
 
 function App() {
-  // const { setSelectedOpts: setTrailerSelectedOpts, data: trailerData } =
-  //   useList({
-  //     defaultOpt: "popular",
-  //     getUrl: (opt) =>
-  //       `https://api.themoviedb.org/3/trending/all/${opt}?api_key=e92a7d5bfbd2499a7104d19001e21114`,
-  //   });
-  // console.log(trendingData, "data");
+  const apiKey = import.meta.env.VITE_API_KEY;
+  console.log(apiKey, "dataw");
   return (
     <>
       <Header />
@@ -34,7 +29,7 @@ function App() {
           ]}
           defaultOpt="day"
           getUrl={(opt) =>
-            `https://api.themoviedb.org/3/trending/all/${opt}?api_key=e92a7d5bfbd2499a7104d19001e21114`
+            `https://api.themoviedb.org/3/trending/all/${opt}?api_key=${apiKey}`
           }
         />
       </div>
@@ -55,9 +50,9 @@ function App() {
           ]}
           getUrl={(opt) => {
             if (opt == "movie") {
-              return `https://api.themoviedb.org/3/movie/now_playing?api_key=e92a7d5bfbd2499a7104d19001e21114`;
+              return `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`;
             } else {
-              return "https://api.themoviedb.org/3/tv/airing_today?api_key=e92a7d5bfbd2499a7104d19001e21114";
+              return `https://api.themoviedb.org/3/tv/airing_today?api_key=${apiKey}`;
             }
           }}
         />
@@ -66,7 +61,7 @@ function App() {
         <MovieCarousel
           title="Best Movie"
           getUrl={() =>
-            "https://api.themoviedb.org/3/movie/top_rated?api_key=e92a7d5bfbd2499a7104d19001e21114"
+            `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
           }
         />
       </div>
@@ -74,7 +69,7 @@ function App() {
         <MovieCarousel
           title="Best TV Series"
           getUrl={() =>
-            "https://api.themoviedb.org/3/tv/top_rated?api_key=e92a7d5bfbd2499a7104d19001e21114"
+            `https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}`
           }
         />
       </div>
@@ -103,7 +98,7 @@ const MovieCarousel = ({
   getUrl,
   title,
   opts,
-}: Partial<Parameters<typeof useList>[0]> & {
+}: Parameters<typeof useList>[0] & {
   opts?: { val: string; label: string }[];
   title: string;
 }) => {
