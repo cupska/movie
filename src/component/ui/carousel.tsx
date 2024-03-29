@@ -37,9 +37,9 @@ function MainCarousel({
       <div className=" relative group">
         <button
           onClick={previous}
-          className=" absolute  opacity-0 group-hover:opacity-35 text-3xl hover:opacity-100 duration-500 bg-transparent z-[1] top-[40%] max-lg:hidden rotate-180"
+          className=" absolute  opacity-0 group-hover:opacity-100 text-3xl hover:opacity-100 duration-500 bg-transparent z-[1] top-[40%] max-lg:hidden rotate-180"
         >
-          <ArrowCircleRightRoundedIcon fontSize="inherit" />
+          <ArrowCircleRightRoundedIcon fontSize="inherit" stroke=" white" />
         </button>
 
         <Slick
@@ -51,9 +51,9 @@ function MainCarousel({
         </Slick>
         <button
           onClick={next}
-          className=" absolute text-3xl opacity-0 group-hover:opacity-35 hover:opacity-100 duration-100 bg-transparent z-[1] right-0 top-[40%] max-lg:hidden"
+          className=" absolute text-3xl opacity-0 group-hover:opacity-100 hover:opacity-100   duration-100 bg-transparent z-[1] right-0  top-[40%] max-lg:hidden"
         >
-          <ArrowCircleRightRoundedIcon fontSize="inherit" />
+          <ArrowCircleRightRoundedIcon fontSize="inherit" stroke=" white" />
         </button>
       </div>
     </>

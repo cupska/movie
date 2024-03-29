@@ -20,7 +20,7 @@ function App() {
         </p>
         <input type="text" className=" bg-white ring m-auto block" />
       </div>
-      <div className=" py-8 max-w-6xl m-auto">
+      <div className=" my-8 max-w-6xl m-auto">
         <MovieCarousel
           title="Trending"
           opts={[
@@ -34,7 +34,7 @@ function App() {
         />
       </div>
 
-      <div className=" py-8 max-w-6xl m-auto">
+      <div className=" my-8 py-8 max-w-6xl bg-rose-200 m-auto">
         <TrailerCarousel
           title="On The Air"
           defaultOpt="movie"
@@ -57,7 +57,7 @@ function App() {
           }}
         />
       </div>
-      <div className=" py-8 max-w-6xl m-auto">
+      <div className=" my-8 max-w-6xl m-auto">
         <MovieCarousel
           title="Best Movie"
           getUrl={() =>
@@ -65,7 +65,7 @@ function App() {
           }
         />
       </div>
-      <div className=" py-8 max-w-6xl m-auto">
+      <div className=" my-8 max-w-6xl m-auto">
         <MovieCarousel
           title="Best TV Series"
           getUrl={() =>
@@ -77,19 +77,24 @@ function App() {
   );
 }
 
-const isMobile = window.innerWidth <= 425;
+const innerVP = window.innerWidth;
+const modeDevice: "mobile" | "tablet" | "desktop" =
+  innerVP >= 1023 ? "desktop" : innerVP >= 768 ? "tablet" : "mobile";
 const settingsCarousel = {
   movie: {
-    slidesToShow: isMobile ? 2.3 : 5,
-    slidesToScroll: isMobile ? 2 : 5,
+    slidesToShow:
+      modeDevice == "mobile" ? 1.8 : modeDevice == "tablet" ? 2.3 : 5,
+    slidesToScroll: modeDevice == "mobile" ? 1 : modeDevice == "tablet" ? 3 : 5,
     infinite: false,
-    draggable: isMobile,
+    draggable: modeDevice != "desktop",
+    variableWidth: modeDevice != "desktop",
   } as Settings,
   trailer: {
-    slidesToShow: isMobile ? 1.3 : 3,
-    slidesToScroll: isMobile ? 1 : 3,
+    slidesToShow:
+      modeDevice == "mobile" ? 1.3 : modeDevice == "tablet" ? 2.3 : 4,
+    slidesToScroll: modeDevice == "mobile" ? 1 : modeDevice == "tablet" ? 2 : 5,
     infinite: false,
-    draggable: isMobile,
+    draggable: modeDevice != "desktop",
   } as Settings,
 };
 
@@ -122,13 +127,14 @@ const MovieCarousel = ({
       <Carousel.MainCarousel settings={{ ...settingsCarousel.movie }}>
         {data
           ? data?.results.map((movie, i) => (
-              <MovieCard
-                key={i}
-                id={movie.id}
-                releaseDate={movie.first_air_date || movie.release_date}
-                img={`https://image.tmdb.org/t/p/w500` + movie.poster_path}
-                title={movie.name || movie.original_title}
-              />
+              <div key={i} className=" px-1 lg:mx-0">
+                <MovieCard
+                  id={movie.id}
+                  releaseDate={movie.first_air_date || movie.release_date}
+                  img={`https://image.tmdb.org/t/p/w500` + movie.poster_path}
+                  title={movie.name || movie.original_title}
+                />
+              </div>
             ))
           : Array.from({ length: 20 }).map((_, i) => <MovieCard key={i} />)}
       </Carousel.MainCarousel>

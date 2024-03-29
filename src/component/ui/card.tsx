@@ -12,10 +12,10 @@ function MovieCard({
   id?: string | number;
 }) {
   return (
-    <div className=" w-40 m-auto">
+    <div className=" max-w-40 m-auto">
       <div className=" rounded-lg overflow-hidden">
         {img ? (
-          <img src={img} alt={title} className=" w-40 aspect-[150/225]" />
+          <img src={img} alt={title} className=" aspect-[150/225]" />
         ) : (
           <Skeleton
             animation={"wave"}
@@ -59,7 +59,7 @@ function TrailerCard({
   img?: string;
 }) {
   return (
-    <div className="  min-w-60   max-w-80 px-1  m-auto">
+    <div className="  min -w -60   max-w-80 px-1  m-auto">
       <div className="rounded-lg relative overflow-hidden aspect-[300/168.5]">
         {img ? (
           <>
