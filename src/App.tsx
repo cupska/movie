@@ -37,13 +37,8 @@ function App() {
             renderInput={(params) => (
               <TextField
                 {...params}
-                className="bg-black" //" bg-black placeholder:text-white *:text-white  *:border-white *:ring-white hover:outline-white"
-                // sx={{
-                //   color: "white",
-                //   outline: "white",
-                // }}
+                className="bg-black"
                 onChange={(e) => setQuery(e.target.value)}
-                // style={{ color: "white" }}
                 placeholder="Search for a movie, tv show, person...."
               />
             )}
@@ -63,6 +58,14 @@ function App() {
           }
         />
       </div>
+      <div
+        className=" h-52 w-full"
+        style={{
+          backgroundImage: `url("../src/assets/popcorn.jpg")`,
+          backgroundSize: "cover",
+          boxShadow: "inset 0 0 8px 6px #111111, inset 0 0 200px 80px #111111",
+        }}
+      ></div>
 
       <div className=" my-8 max-w-6xl relative backdrop-grayscale bg-blend-overlay m-auto">
         <div
