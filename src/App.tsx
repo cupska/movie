@@ -7,6 +7,7 @@ import { MovieCard, TrailerCard } from "./component/ui/card";
 import { useList } from "./hooks/useList";
 import { Autocomplete, TextField } from "@mui/material";
 import { useSearching } from "./hooks/useSearching";
+import popcorn from "/popcorn.jpg";
 
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -61,12 +62,12 @@ function App() {
       <div
         className=" h-52 w-full"
         style={{
-          backgroundImage: `url("../src/assets/popcorn.jpg")`,
+          backgroundImage: `url(${popcorn})`,
           backgroundSize: "cover",
           boxShadow: "inset 0 0 8px 6px #111111, inset 0 0 200px 80px #111111",
         }}
       ></div>
-      <img src="../src/assets/popcorn.jpg" alt="" width={"100%"} height={500} />
+      <img src="./popcorn.jpg" alt="" width={"100%"} height={500} />
 
       <div className=" my-8 max-w-6xl relative backdrop-grayscale bg-blend-overlay m-auto">
         <div
