@@ -67,14 +67,14 @@ function App() {
       <div className=" my-8 max-w-6xl relative backdrop-grayscale bg-blend-overlay m-auto">
         <div
           style={{
-            backgroundImage: `url("../public/popcorn.jpg")`,
+            backgroundImage: `url("../src/assets/popcorn.jpg")`,
             backgroundSize: "cover",
             boxShadow:
               "inset 0 0 8px 6px #111111, inset 0 0 200px 80px #111111",
           }}
           className="  absolute w-full h-full top-0 left-0"
         />
-        <div className=" backdrop-grayscale bg-[#111111]/60 py-8 ">
+        <div className=" backdrop-grayscale lg:bg-[#111111]/40 py-8 ">
           <TrailerCarousel
             title="On The Air"
             defaultOpt="movie"
