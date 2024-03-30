@@ -7,7 +7,6 @@ import { MovieCard, TrailerCard } from "./component/ui/card";
 import { useList } from "./hooks/useList";
 import { Autocomplete, TextField } from "@mui/material";
 import { useSearching } from "./hooks/useSearching";
-import popcorn from "../public/popcorn.jpg";
 
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
