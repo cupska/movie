@@ -12,7 +12,7 @@ function MovieCard({
   id?: string | number;
 }) {
   return (
-    <div className=" max-w-40 m-auto">
+    <div className=" m-auto">
       <div className=" rounded-lg overflow-hidden">
         {img ? (
           <img src={img} alt={title} className=" aspect-[150/225]" />
@@ -27,7 +27,7 @@ function MovieCard({
         )}
       </div>
       <div>
-        <h5 className=" line-clamp-2 font-medium leading-4  mt-2 w-[150px]">
+        <h5 className=" line-clamp-2 font-medium leading-4  mt-2 ">
           {title || (
             <>
               <Skeleton
@@ -59,8 +59,8 @@ function TrailerCard({
   img?: string;
 }) {
   return (
-    <div className="  min -w -60   max-w-80 px-1  m-auto">
-      <div className="rounded-lg relative overflow-hidden aspect-[300/168.5]">
+    <div className="  min-w-60 max-w-80 m-auto">
+      <div className="rounded-lg w-full relative overflow-hidden aspect-[300/168.5]">
         {img ? (
           <>
             <img

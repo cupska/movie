@@ -3,7 +3,7 @@ import { Link } from "@mui/material";
 function Footer() {
   const email = "my.kurn@gmail.com";
   return (
-    <footer className=" bg-rose-200 flex py-8 items-center justify-center flex-col">
+    <footer className=" border-t border-gray-200/10 flex py-8 items-center justify-center flex-col">
       <div>Hubungi developer</div>
       <ul>
         <li>

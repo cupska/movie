@@ -16,10 +16,10 @@ function Container({ children }: { children: ReactNode }) {
 function MainCarousel({
   children, //menerima item arrai
   settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    // infinite: true,
+    // speed: 500,
+    // slidesToShow: 5,
+    // slidesToScroll: 5,
   },
 }: {
   children: ReactNode;
@@ -39,7 +39,7 @@ function MainCarousel({
           onClick={previous}
           className=" absolute  opacity-0 group-hover:opacity-100 text-3xl hover:opacity-100 duration-500 bg-transparent z-[1] top-[40%] max-lg:hidden rotate-180"
         >
-          <ArrowCircleRightRoundedIcon fontSize="inherit" stroke=" white" />
+          <ArrowCircleRightRoundedIcon fontSize="inherit" />
         </button>
 
         <Slick
@@ -51,9 +51,9 @@ function MainCarousel({
         </Slick>
         <button
           onClick={next}
-          className=" absolute text-3xl opacity-0 group-hover:opacity-100 hover:opacity-100   duration-100 bg-transparent z-[1] right-0  top-[40%] max-lg:hidden"
+          className=" absolute text-3xl opacity-0 group-hover:opacity-100 hover:opacity-100  duration-100 bg-transparent z-[1] right-0  top-[40%] max-lg:hidden"
         >
-          <ArrowCircleRightRoundedIcon fontSize="inherit" stroke=" white" />
+          <ArrowCircleRightRoundedIcon fontSize="inherit" />
         </button>
       </div>
     </>
@@ -61,7 +61,7 @@ function MainCarousel({
 }
 
 function HeaderWrapper({ children }: { children: ReactNode }) {
-  return <div className=" px-4 flex items-center gap-2">{children}</div>;
+  return <div className=" my-3 px-4 flex items-center gap-2">{children}</div>;
 }
 
 function HeaderTitle({ title }: { title: string }) {

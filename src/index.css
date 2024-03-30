@@ -7,10 +7,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  /* background-color: #242424; */
-
+  background-color: #111111;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -34,10 +33,32 @@ body {
   /* min-height: 100dvh; */
 }
 
+@layer components {
+  /* .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root > * {
+    @apply text-white fill-white;
+  }
+  .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+    @apply text-white;
+  } */
+  .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    /* color: white;
+    background-color: #747bff; */
+    @apply bg-rose-400;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    color: #000000;
-    background-color: #ffffff;
+    color: #d1cbcb;
+    background-color: #692c2c;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: white;
   }
   a:hover {
     color: #747bff;
