@@ -7,7 +7,6 @@ import { MovieCard, TrailerCard } from "./component/ui/card";
 import { useList } from "./hooks/useList";
 import { Autocomplete, TextField } from "@mui/material";
 import { useSearching } from "./hooks/useSearching";
-import popcorn from "/popcorn.jpg";
 
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -20,9 +19,9 @@ function App() {
         style={{
           backgroundImage: `url(
 "https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/71293304-1e8e-4c03-aa3c-9ece66025d12/ID-en-20240326-popsignuptwoweeks-perspective_alpha_website_large.jpg"          )`,
-          boxShadow:
-            "inset 0 0 50px 50px #111111, inset 0 0 185px 100px #111111", // inset 42px 42px 185px black",
-          //inset 32px 32px 85px #ffffff"
+          boxShadow: `inset 0 0 50px 50px #111111, inset 0 0 285px ${
+            window.innerWidth >= 425 ? 100 : 5
+          }px #111111`,
         }}
       >
         <div className=" px-2 lg:px-0 ">
@@ -59,20 +58,10 @@ function App() {
           }
         />
       </div>
-      <div
-        className=" h-52 w-full"
-        style={{
-          backgroundImage: `url(${popcorn})`,
-          backgroundSize: "cover",
-          boxShadow: "inset 0 0 8px 6px #111111, inset 0 0 200px 80px #111111",
-        }}
-      ></div>
-      <img src="./popcorn.jpg" alt="" width={"100%"} height={500} />
-
       <div className=" my-8 max-w-6xl relative backdrop-grayscale bg-blend-overlay m-auto">
         <div
           style={{
-            backgroundImage: `url("../src/assets/popcorn.jpg")`,
+            backgroundImage: `url("/popcorn.jpg")`,
             backgroundSize: "cover",
             boxShadow:
               "inset 0 0 8px 6px #111111, inset 0 0 200px 80px #111111",

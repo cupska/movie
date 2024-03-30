@@ -6,9 +6,21 @@ import { Footer } from "./component/ui/footer.tsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
-    <Footer />
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <App />
+      <Footer />
+    </ThemeProvider>
   </React.StrictMode>
 );

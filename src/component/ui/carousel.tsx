@@ -82,6 +82,7 @@ function SelectOpts({
         labelId="demo-select-small-label"
         id="demo-select-small"
         value={selected}
+        sx={{ backgroundColor: "black" }}
         onChange={(e) => [onChange && onChange(e), setSelected(e.target.value)]}
       >
         {opts.map((opt, i) => (
