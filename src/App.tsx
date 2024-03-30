@@ -66,6 +66,7 @@ function App() {
           boxShadow: "inset 0 0 8px 6px #111111, inset 0 0 200px 80px #111111",
         }}
       ></div>
+      <img src="../src/assets/popcorn.jpg" alt="" width={"100%"} height={500} />
 
       <div className=" my-8 max-w-6xl relative backdrop-grayscale bg-blend-overlay m-auto">
         <div
