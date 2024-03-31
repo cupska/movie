@@ -18,8 +18,8 @@ function Header() {
   //   window.addEventListener("scroll", () => )
   // }, [])
   return (
-    <header className="  max-w-6xl relative m-auto flex items-center justify-between p-4">
-      <div className=" text-3xl lg:text-5xl absolute font-bold top-0 p-4   text-red-600">
+    <header className="  max-w-6xl relative m-auto flex items-center justify-between">
+      <div className=" text-3xl lg:text-5xl z-10 absolute font-bold top-0 p-4   text-red-600">
         MovieDB
       </div>
     </header>

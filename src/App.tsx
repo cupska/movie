@@ -10,12 +10,12 @@ import { useSearching } from "./hooks/useSearching";
 
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
-  const { result, setQuery } = useSearching({ defaultQuery: "the" });
+  const { result, setQuery } = useSearching({ defaultQuery: "" });
   return (
     <>
       <Header />
       <div
-        className="  min-h-80 h-[50dvh] lg:h-[70dvh]  flex justify-center shadow-inner max-w-[1780px] m-auto items-center"
+        className=" relative min-h-80 h-[60vh] lg:h-[70dvh]  flex justify-center shadow-inner max-w-[1780px] m-auto items-center"
         style={{
           backgroundImage: `url(
 "https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/71293304-1e8e-4c03-aa3c-9ece66025d12/ID-en-20240326-popsignuptwoweeks-perspective_alpha_website_large.jpg"          )`,
@@ -24,9 +24,9 @@ function App() {
           }px #111111`,
         }}
       >
-        <div className=" px-2 lg:px-0 ">
-          <h2 className=" p-4 text-3xl font-semibold ">
-            <span className=" text-4xl">Welcome.</span>
+        <div className=" absolute max-w-3xl m-auto px-2 lg:px-0  md:bg-[#111111] md:bg-opacity-45 md:shadow-[0_0_600px_400px_rgb(17,17,17,0.45)] md:rounded-full    ">
+          <h2 className=" p-4 text-3xl lg:text-5xl leading-snug font-semibold ">
+            <span className=" text-3xl lg:text-6xl">Welcome.</span>
             <br /> Millions of movies, TV shows and people to discover. Explore
             now.
           </h2>
