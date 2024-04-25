@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 
 function useSearching({ defaultQuery }: { defaultQuery?: string }) {
   const [query, setQuery] = useState<string>(defaultQuery ?? "");
-  const [result, setResult] = useState<{ results: { name: string }[] }>();
+  const [result, setResult] = useState<{
+    results: { name: string; id: string | number }[];
+  }>();
   useEffect(() => {
     const fetch = async () => {
       const res = await axios.get(
@@ -15,6 +17,10 @@ function useSearching({ defaultQuery }: { defaultQuery?: string }) {
     };
     fetch();
   }, [query]);
-  return { setQuery, result: result?.results?.map((dat) => dat.name) }; //|| [""] };
+  console.log(result?.results);
+  return {
+    setQuery,
+    result: result?.results?.map((dat) => dat),
+  }; //|| [""] };
 }
 export { useSearching };

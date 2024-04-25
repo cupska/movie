@@ -1,4 +1,3 @@
-import "./App.css";
 import * as Carousel from "./component/ui/carousel";
 import { Header } from "./component/ui/header";
 
@@ -6,7 +5,7 @@ import { Settings } from "react-slick";
 import { MovieCard, TrailerCard } from "./component/ui/card";
 import { useList } from "./hooks/useList";
 import { Autocomplete, TextField } from "@mui/material";
-import { useSearching } from "./hooks/useSearching";
+import { useSearching } from "./hooks/useSearching"; 
 
 function App() {
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -33,7 +32,7 @@ function App() {
           <Autocomplete
             id="free-solo-demo-search"
             freeSolo
-            options={result?.map((option) => option) || [""]}
+            options={result?.map((option) => option.name) || [""]}
             renderInput={(params) => (
               <TextField
                 {...params}
@@ -43,6 +42,7 @@ function App() {
               />
             )}
           />
+          {/* <MovieModal open id="" /> */}
         </div>
       </div>
       <div className=" my-8 max-w-6xl m-auto">
@@ -162,7 +162,7 @@ const MovieCarousel = ({
       <Carousel.MainCarousel settings={{ ...settingsCarousel.movie }}>
         {data
           ? data?.results.map((movie, i) => (
-              <li key={i} className=" px-1 ">
+              <li key={i} className=" px-4 ">
                 <MovieCard
                   id={movie.id}
                   releaseDate={movie.first_air_date || movie.release_date}
@@ -171,7 +171,9 @@ const MovieCarousel = ({
                 />
               </li>
             ))
-          : Array.from({ length: 20 }).map((_, i) => <MovieCard key={i} />)}
+          : Array.from({ length: 20 }).map((_, i) => (
+              <MovieCard key={i} id={0} />
+            ))}
       </Carousel.MainCarousel>
     </Carousel.Container>
   );
@@ -205,7 +207,7 @@ const TrailerCarousel = ({
       <Carousel.MainCarousel settings={settingsCarousel.trailer}>
         {data
           ? data?.results?.map((movie) => (
-              <li key={movie.id} className=" px-1">
+              <li key={movie.id} className=" px-4">
                 <TrailerCard
                   title={movie.name || movie.original_title}
                   img={`https://image.tmdb.org/t/p/w500` + movie.backdrop_path}
